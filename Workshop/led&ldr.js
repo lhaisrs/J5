@@ -1,0 +1,14 @@
+var five = require("johnny-five"),
+  board, photoresistor;
+board = new five.Board();
+board.on("ready", function() {
+  var led = new five.Led(13);	
+  photoresistor = new five.Sensor({
+    pin: "A0",
+    freq: 250
+  });
+  photoresistor.on("data", function() {
+    console.log(this.raw/4);
+    led.brightness(this.raw/4);
+  });
+});
