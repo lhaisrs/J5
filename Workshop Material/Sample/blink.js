@@ -1,5 +1,7 @@
-var five = require("johnny-five"); // Carrega o Johnny-Five
-var board = new five.Board(); // Carrega nova placa em board
+// Carrega o Johnny-Five
+var five = require("johnny-five"); 
+// Carrega nova placa em board
+var board = new five.Board(); 
 // Quando a placa estiver pronta execute function
 board.on("ready", function() {
    // Se conecta ao led no pino 13
